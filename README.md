@@ -1,4 +1,4 @@
-# Chat Studio
+# NoxIA Platform
 
 Juego de 10 niveles de programacion con JavaScript/TypeScript, compilacion en navegador y chat de ayuda con IA.
 
