@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat Studio Levels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand">
+        <span class="pill">Training</span>
+        <h1>Chat Studio</h1>
+      </div>
+      <div id="connectionStatus" class="status">Conectando...</div>
+    </header>
+
+    <main class="workspace">
+      <aside class="levels-panel card">
+        <div class="panel-title">
+          <p class="eyebrow">Ruta</p>
+          <h2>10 Niveles</h2>
+        </div>
+        <div id="levelsList" class="levels-list"></div>
+      </aside>
+
+      <section class="editor-panel card">
+        <div class="editor-header">
+          <div>
+            <p id="levelLabel" class="eyebrow">Nivel 1</p>
+            <h2 id="levelTitle">Cargando nivel...</h2>
+            <p id="levelGoal" class="goal"></p>
+          </div>
+          <div class="editor-actions">
+            <button id="resetLevelBtn" class="ghost" type="button">Reset</button>
+            <button id="runBtn" class="run" type="button">Ejecutar</button>
+          </div>
+        </div>
+
+        <div class="attempt-bar">
+          <div id="attemptText">Intentos: 0/3</div>
+          <div class="attempt-track"><span id="attemptFill"></span></div>
+        </div>
+
+        <div class="editor-surface">
+          <div id="lineNumbers" class="line-numbers">1</div>
+          <textarea id="codeEditor" spellcheck="false"></textarea>
+        </div>
+
+        <div id="runOutput" class="run-output">Listo para ejecutar.</div>
+      </section>
+
+      <aside class="chat-panel card">
+        <div class="chat-header">
+          <div>
+            <p class="eyebrow">Ayuda NoxIA</p>
+            <h2>NoxIA <span id="questionsLeft" class="q-badge"></span></h2>
+          </div>
+          <button id="clearChatBtn" class="ghost" type="button">Nueva sesion</button>
+        </div>
+
+        <div id="chatMessages" class="chat-messages">
+          <article class="message assistant">
+            <div class="role">NoxIA</div>
+            <div class="bubble">Te doy pistas para resolver cada nivel. Si pides la solucion, se mostrara ofuscada hasta agotar 3 intentos de compilacion.</div>
+          </article>
+        </div>
+
+        <form id="chatForm" class="chat-form">
+          <textarea id="chatInput" rows="3" placeholder="Pregunta por una pista, estrategia o bug puntual..."></textarea>
+          <button id="sendBtn" type="submit">Preguntar</button>
+        </form>
+      </aside>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/typescript@5.8.3/lib/typescript.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
